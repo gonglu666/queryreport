@@ -8,6 +8,7 @@ public class GitHubTest {
         System.out.println("githubtest");
         System.out.println("the first modify on idea!");
         System.out.println("the first modify on github!");
+        System.out.println("the second modify on github!");
 
     }
 }
