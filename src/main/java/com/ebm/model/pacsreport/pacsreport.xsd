@@ -1,0 +1,86 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ebm.com/webservice"
+           targetNamespace="http://www.ebm.com/webservice" elementFormDefault="qualified">
+    <xs:element name="request">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="QueryCode" type="xs:string"/>
+                <xs:element name="QueryType" type="xs:integer"/>
+                <xs:element name="StartTime" type="xs:string"/>
+                <xs:element name="EndTime" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="returnresult" type="tns:returnresult"/>
+                <xs:element name="data" type="tns:data"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+    <xs:complexType name="data">
+        <xs:sequence  maxOccurs="unbounded">
+            <xs:element name="data_row" type="tns:data_row"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="returnresult">
+        <xs:sequence  >
+            <xs:element name="returncode" type="xs:integer"/>
+            <xs:element name="errormsg" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+
+    <xs:complexType name="data_row">
+        <xs:sequence>
+            <xs:element name="ReportId" type="xs:string"/>
+            <xs:element name="PatientName" type="xs:string"/>
+            <xs:element name="PatientSex" type="xs:string"/>
+            <xs:element name="Age" type="xs:string"/>
+            <xs:element name="SubHospitalID" type="xs:string"/>
+            <xs:element name="DeptName" type="xs:string"/>
+            <xs:element name="Bed" type="xs:string"/>
+            <xs:element name="ItemName" type="xs:string"/>
+            <xs:element name="ItemPara" type="xs:string"/>
+            <xs:element name="ItemDes" type="xs:string"/>
+            <xs:element name="JcYj" type="xs:string"/>
+            <xs:element name="GiveInspectionDoctor" type="xs:string"/>
+            <xs:element name="GiveInspectionTime" type="xs:string"/>
+            <xs:element name="InceptDepartment" type="xs:string"/>
+            <xs:element name="InceptDoctor" type="xs:string"/>
+            <xs:element name="InceptTime" type="xs:string"/>
+            <xs:element name="InspectionTime" type="xs:string"/>
+            <xs:element name="InspectionResult" type="xs:string"/>
+            <xs:element name="ResultUrl" type="xs:string"/>
+            <xs:element name="ResultStream" type="xs:string"/>
+            <xs:element name="CheckPerson" type="xs:string"/>
+            <xs:element name="CheckTime" type="xs:string"/>
+            <xs:element name="ClinicalDiagnoses" type="xs:string"/>
+            <xs:element name="RequisitionTime" type="xs:string"/>
+            <xs:element name="ResultState" type="xs:integer"/>
+            <xs:element name="PrintCount" type="xs:integer"/>
+            <xs:element name="PatientID" type="xs:string"/>
+            <xs:element name="SampleType" type="xs:string"/>
+            <xs:element name="IDCode" type="xs:string"/>
+            <xs:element name="Note" type="xs:string"/>
+            <xs:element name="Source" type="xs:string"/>
+            <xs:element name="InHosNum" type="xs:NCName"/>
+            <xs:element name="SerialFlowNo" type="xs:NCName"/>
+            <xs:element name="Location" type="xs:NCName"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+
+
+
+
+</xs:schema>
